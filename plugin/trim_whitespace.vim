@@ -2,7 +2,16 @@ if exists("b:trim_white_spaces_loaded")
   finish
 endif
 let b:trim_white_spaces_loaded = 1
-let [g:trim_ws_trailing, g:trim_ws_condense, g:trim_ws_eof] = [1, 1, 1]
+
+if !exists("g:trim_ws_trailing")
+  let g:trim_ws_trailing = 1
+end
+if !exists("g:trim_ws_condense")
+  let g:trim_ws_condense = 1
+end
+if !exists("g:trim_ws_eof")
+  let g:trim_ws_eof = 1
+end
 
 function! s:TrimWhiteSpace()
   let row = line('.')
